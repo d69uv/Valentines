@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: grey;
+            color: white;
+        }
+        .hint {
+            margin-top: 10px;
+            color: black;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine Namrata?</h1>
+        <div class="buttons">
+            <button class="yes" onclick="yesClicked()">Yes</button>
+            <button class="no" onclick="noClicked()">No</button>
+        </div>
+        <p class="hint">(Click no as long as you can)</p>
+    </div>
+
+    <script>
+        let noQuestions = ["Are you sure baby?", "Really sure?", "Think again cutie", "But I love you so much" , "Don't do this to me na" , "Arey jaan" , "Please?" , "Come on love" , "I'll start crying" , "Can u not?" , "Why do you hate me" , "Just say yes" , "Okay stop" , "Istg" , "Enough na" , "Last chance" , "Yes" , "Yes" ];
+        let noIndex = 0;
+
+        function yesClicked() {
+            document.querySelector(".container").innerHTML = "<h1>Yayyy, I love you so much baby, Happy Valentines <3</h1>";
+        }
+
+        function noClicked() {
+            let noButton = document.querySelector(".no");
+            if (noIndex < noQuestions.length - 1) {
+                noButton.innerText = noQuestions[noIndex];
+                noIndex++;
+            } else {
+                document.querySelector(".buttons").innerHTML = "<h2>Yayyy, I love you so much baby, Happy Valentines <3</h2>";
+            } 
